@@ -1,0 +1,114 @@
+.loginFormSec {
+    background-image: linear-gradient(rgba(31, 32, 34, 0.8)), url(../../imgs/bg.jpg);
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FormContainer {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    width: 80%;
+    height: auto;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.signin h1 {
+    font-size: 40px;
+    margin: 5px;
+    padding: 10px;
+
+}
+
+.haveAcc p {
+    margin: 3px;
+    padding: 1px;
+}
+
+
+input {
+    padding: 10px 40px;
+    margin: 5px 10px;
+    border-radius: 6px;
+    border: none;
+
+}
+
+input::placeholder {
+    outline: none;
+    color: black;
+}
+
+input:focus {
+    outline: none;
+
+}
+
+
+
+
+.forgetPass p {
+    font-size: 9px;
+    margin: 11px;
+}
+
+
+
+#btnSignin {
+    padding: 10px;
+    margin: 5px 10px;
+    min-width: 240px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(9, 151, 185);
+    color: white;
+
+}
+
+.newAcc {
+    margin: 11px;
+    font-size: 10px;
+}
+
+
+
+#btnSignup {
+    width: 20rem;
+    height: 36px;
+    margin: 13px;
+    border-radius: 5px;
+    border: none;
+    font-size: 12px;
+    background-color: rgb(9, 151, 185);
+}
+
+a {
+    width: 20rem;
+    height: 17px;
+    margin-top: 6px;
+    text-align: center;
+    padding: 11px 2px;
+    border-radius: 5px;
+    color: white;
+    font-style: normal;
+    text-decoration: auto;
+    font-size: 12px;
+}
+
+.userName {
+    text-transform: capitalize;
+}

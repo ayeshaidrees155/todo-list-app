@@ -1,0 +1,51 @@
+.todoPage {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    background-image: linear-gradient(rgba(31, 32, 34, 0.8), rgba(31, 32, 34, 0.8)), url(../imgs/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 41px;
+    padding-bottom: 40px;
+
+    box-sizing: border-box;
+}
+
+
+.childDiv {
+    width: 80%;
+    margin: 87px auto 20px auto;
+    background-color: rgba(40, 39, 39, 0.2);
+    border-radius: 5px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    justify-content: center;
+    padding: 10px 20px;
+
+
+}
+
+.delAllBtn {
+    padding: 8px 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+    width: 210px;
+    background-color: rgb(9, 151, 185);
+    border: none;
+    border-radius: 5px;
+
+}
+
+.delAllBtn:hover {
+    border: 1px solid white;
+}
