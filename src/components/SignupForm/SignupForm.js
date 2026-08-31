@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../LoginForm/LoginForm.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -10,17 +10,29 @@ export default function SignupForm() {
     password: "",
     confirmPassword: "",
   });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    let updatedValue = value;
+    if (name === "userName" && value.length > 0) {
+      updatedValue = value.replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+
+    setFormData({ ...formData, [name]: updatedValue });
+
+    setErrors({
+      ...errors,
+      [name]: "",
+    });
   };
 
   const [errors, setErrors] = useState({});
-  const validateForm = (e) => {
+  const validateForm = () => {
     const newErrors = {};
     const passwordPattern = /^[a-zA-Z0-9]+$/;
     if (!formData.userName.trim()) {
-      newErrors.userName = "Enter  username here.";
+      newErrors.userName = "Enter username here.";
     }
     if (!formData.password.trim()) {
       newErrors.password = "Enter password here.";
@@ -36,6 +48,7 @@ export default function SignupForm() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const handelSignUp = (e) => {
     e.preventDefault();
     const isValid = validateForm();
@@ -44,7 +57,7 @@ export default function SignupForm() {
     }
 
     localStorage.setItem("isLoggedIn", "true");
-    //for gretting msg
+    //for greeting msg
     localStorage.setItem("loggedUser", formData.userName);
     navigate("/todo");
   };
@@ -55,9 +68,6 @@ export default function SignupForm() {
         <div className="signin">
           <h1>Sign Up </h1>
         </div>
-        {/* <div className="haveAcc">
-          <p>Have an account?</p>
-        </div> */}
         <form id="signup-form" onSubmit={handelSignUp}>
           <input
             type="text"
@@ -66,6 +76,7 @@ export default function SignupForm() {
             onChange={handleChange}
             id="userName"
             placeholder="Username"
+            className="userName"
           />
           {errors.userName && (
             <p
@@ -104,7 +115,6 @@ export default function SignupForm() {
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
-            // id="password"
             placeholder="Confirm Password"
           />
           {errors.confirmPassword && (
@@ -121,15 +131,10 @@ export default function SignupForm() {
           )}
         </form>
 
-        <button
-          form="signup-form"
-          // onClick={handelSignUp}
-          id="btnSignin"
-          style={{ margin: "12px" }}
-        >
+        <button form="signup-form" id="btnSignin" style={{ margin: "12px" }}>
           Sign Up
         </button>
-        <div class="newAcc">
+        <div className="newAcc">
           <p style={{ textDecoration: "underline", fontSize: "14px" }}>
             <Link to="/login"> Back to Login</Link>
           </p>

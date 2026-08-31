@@ -34,7 +34,15 @@ export default function InputBox({ onAdd, taskToEdit, isEditing }) {
   return (
     <div className="inputParent">
       <div className="inputBox">
-        <form onSubmit={handleAdditem}>
+        <form
+          onSubmit={handleAdditem}
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
           <div className="iconInputSec">
             <div className="iconDiv">
               <PiBookDuotone className="inputIcon" />
@@ -45,6 +53,7 @@ export default function InputBox({ onAdd, taskToEdit, isEditing }) {
               value={text}
               type="text"
               placeholder={isEditing ? "Update Task" : "New Todo"}
+              style={{ fontSize: "16px", width: "100%" }}
             />
           </div>
 

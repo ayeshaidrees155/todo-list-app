@@ -13,7 +13,7 @@ export default function LoginForm() {
     }
 
     localStorage.setItem("isLoggedIn", "true");
-    //for greeting msg
+    // for greeting msg
     localStorage.setItem("loggedUser", formData.userName);
     navigate("/todo");
   };
@@ -38,11 +38,11 @@ export default function LoginForm() {
   };
 
   const [errors, setErrors] = useState({});
-  const validateForm = (e) => {
+  const validateForm = () => {
     const newErrors = {};
     const passwordPattern = /^[a-zA-Z0-9]+$/;
     if (!formData.userName.trim()) {
-      newErrors.userName = "Enter  username here.";
+      newErrors.userName = "Enter username here.";
     }
     if (!formData.password.trim()) {
       newErrors.password = "Enter password here.";
